@@ -5,6 +5,13 @@ import { COLORS, WEIGHTS } from '../../constants';
 import { formatPrice, pluralize, isNewShoe } from '../../utils';
 import Spacer from '../Spacer';
 
+const Label = ({variant}) => {
+  const text = variant === 'on-sale' ? 'Sale' : 'Just Released!'
+  const labelColor = variant === 'on-sale' ? '#C5295D' : '#6868D9'
+
+  return <_Label style={{'--label-color': labelColor}}>{text}</_Label>
+}
+
 const ShoeCard = ({
   slug,
   name,
@@ -34,6 +41,9 @@ const ShoeCard = ({
   return (
     <Link href={`/shoe/${slug}`}>
       <Wrapper >
+        <LabelWrapper>
+          {variant !== 'default' && <Label variant={variant}/>}
+        </LabelWrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
         </ImageWrapper>
@@ -58,6 +68,29 @@ const Link = styled.a`
 
 const Wrapper = styled.article`
 `;
+
+const LabelWrapper = styled.div`
+  background-color: #f5f5f5;
+  border-radius: 16px 16px 0 0;
+  height: 2rem;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+`
+
+const _Label = styled.div`
+  background-color: var(--label-color);
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 700;
+  color: ${COLORS.white};
+  padding: 7px 9px;
+  width: fit-content;
+  position: relative;
+  margin-right: -4px;
+  margin-top: 18px;
+  z-index: 1;
+`
 
 const ImageWrapper = styled.div`
   position: relative;
