@@ -51,6 +51,7 @@ const LeftColumn = styled.div`
   height: fit-content;
   position: sticky;
   top: 32px;
+  padding-top: 8px;
   flex: 1;
 `;
 
@@ -58,7 +59,11 @@ const MainColumn = styled.div`
   flex: 3;
 `;
 
-const Header = styled.header``;
+const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 const Title = styled.h2`
   font-size: 1.5rem;
