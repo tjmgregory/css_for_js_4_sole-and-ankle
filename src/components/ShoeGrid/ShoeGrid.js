@@ -25,7 +25,7 @@ const Wrapper = styled.div`
 
 const CardWrapper = styled.div`
   flex: 1;
-  min-width: 216px;
+  min-width: 256px;
 `
 
 export default ShoeGrid;
