@@ -95,6 +95,7 @@ const _Label = styled.div`
 const ImageWrapper = styled.div`
   position: relative;
   background-color: #f5f5f5;
+  border-radius: 4px;
 `;
 
 const Image = styled.img`
